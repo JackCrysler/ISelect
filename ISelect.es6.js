@@ -27,7 +27,9 @@ class ISelect{
                 if(selectedItem != oldInfo){
                     this.selected.innerHTML = selectedItem;
                     //触发事件 给指定元素触发事件，参数为定义好的事件
+                    this.ev.value = selectedItem;
                     this.wrap.dispatchEvent(this.ev);
+                    //触发回调，并传值
                     this.callback && this.callback(selectedItem)
                 }
             }

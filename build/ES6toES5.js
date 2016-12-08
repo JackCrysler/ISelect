@@ -46,15 +46,20 @@
 
 	'use strict';
 
-	var _class = __webpack_require__(1);
+	var _ISelect = __webpack_require__(1);
 
-	var _class2 = _interopRequireDefault(_class);
+	var _ISelect2 = _interopRequireDefault(_ISelect);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	new _class2.default('.i-select', function (data) {
+	new _ISelect2.default('.i-select', function (data) {
 	    console.log('您选择的信息是：' + data);
 	});
+
+	var el = document.querySelector('.i-select');
+	el.addEventListener('selected', function (e) {
+	    console.log(e.value);
+	}, false);
 
 /***/ },
 /* 1 */
@@ -103,7 +108,9 @@
 	                    if (selectedItem != oldInfo) {
 	                        this.selected.innerHTML = selectedItem;
 	                        //触发事件 给指定元素触发事件，参数为定义好的事件
+	                        this.ev.value = selectedItem;
 	                        this.wrap.dispatchEvent(this.ev);
+	                        //触发回调，并传值
 	                        this.callback && this.callback(selectedItem);
 	                    }
 	                }

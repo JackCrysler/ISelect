@@ -1,3 +1,7 @@
+/*
+* ES5  面向对象 实现
+* */
+
 var iSelect = function (cls,callback) {
     this.wrap = document.querySelector(cls);
     this.options = this.wrap.querySelector('ul');
