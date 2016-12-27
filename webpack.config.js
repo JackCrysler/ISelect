@@ -2,8 +2,7 @@ var webpack = require('webpack');
 
 module.exports={
     entry:{
-        ES6toES5:'./index.js',
-        types:'./type.js'
+        ES6toES5:'./index.js'
     },
     output:{
         path:'./',
