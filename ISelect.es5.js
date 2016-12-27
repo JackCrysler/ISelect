@@ -17,7 +17,8 @@ iSelect.prototype = {
         this.ev.initEvent('selected',true,true);
     },
     bindEvent:function () {
-        this.selected.addEventListener('click',function () {
+        this.selected.addEventListener('click',function (e) {
+            e.stopPropagation();
             this.wrap.className+=' active';
             this.options.style.display = 'block';
         }.bind(this),false);
@@ -38,6 +39,10 @@ iSelect.prototype = {
                 }
             }
 
-        }.bind(this),false)
+        }.bind(this),false);
+        document.body.addEventListener('click',function () {
+            this.options.style.display = '';
+            this.wrap.className= this.wrap.className.replace(/\s+active/,'');
+        }.bind(this),false);
     }
 };
