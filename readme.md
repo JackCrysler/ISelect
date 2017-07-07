@@ -20,6 +20,7 @@ el.addEventListener('selected',function (e) {
 },false);
 
 
+*************************************
 
 
 object  js的基本数据类型之一
